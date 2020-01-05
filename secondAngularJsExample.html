@@ -1,0 +1,23 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="utf 8">
+    <title>psaragadam</title>     
+</head>  
+<script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+<body ng-app="app">
+<script>  
+    angular.module("app", []).controller("secondExampleCtrl", function($scope) {  
+    $scope.message="Hello World" 
+    } );
+</script> 
+<h1><a href="http://www.pa1soft.in">Hello angular..!</a></h1>
+
+<div ng-controller="secondExampleCtrl">
+        Tutorial Name : <input type="text" ng-model="tutorialName"><br>
+        <br/><br/>
+        <p> This tutorial is<span><h3>{{tutorialName}}</h3></span></p>
+</div>
+
+</body>  
+</html>

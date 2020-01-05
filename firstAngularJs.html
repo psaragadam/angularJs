@@ -1,0 +1,38 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="utf 8">
+    <title>psaragadam</title>     
+</head>  
+<script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+<body ng-app="app">
+<script>  
+    angular.module("app", []).controller("HelloWorldCtrl", function($scope) {  
+    $scope.message="Hello World" 
+    } )
+</script> 
+
+<div>
+        <h1 ng-controller="HelloWorldCtrl"><a href="http://www.pa1soft.in">{{message}}</a></h1>
+<p>
+Insert: <input type="radio" name="type" checked="true" />
+Search: <input type="radio" name="type" />
+</p>
+<div style="display: block;">
+<form action="/insert" method="POST">
+        <p> Name : <input type="text" name="name" /> </p>
+        <p>Location : <input type="text" name="location" /></p>
+        <p>Job: <input type="text" name="job" /></p>
+        <p>&nbsp;&nbsp;&nbsp;<input type="submit" name="submit"/></p>
+</form>
+</div>
+<div style="display: none;">
+        <form action="/find" method="GET">
+        <p> By Name : <input type="text" name="name" /> </p>
+        <p>&nbsp;&nbsp;&nbsp;<input type="submit" name="search"></input></p>
+        </form>
+</div>
+</div>
+
+</body>  
+</html>
