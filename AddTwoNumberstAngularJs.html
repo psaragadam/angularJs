@@ -1,0 +1,35 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="utf 8">
+    <title>psaragadam</title>     
+</head>  
+<script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+<body ng-app="addApp">
+<script>  
+    angular.module("addApp", []).controller("addTwoNumbersCtrl", function($scope) {  
+        $scope.results=function(numberOne, numberTwo){
+                if(!numberOne){
+                        numberOne=0;
+                }
+                if(!numberTwo){
+                        numberTwo=0;
+                }
+                return parseInt(numberOne) + parseInt(numberTwo);
+        };
+    } )
+</script> 
+<h1><a href="http://www.pa1soft.in">Hello angular..!</a></h1>
+<h3>Sum of Two number:</h3>
+<div>
+                <div ng-controller="addTwoNumbersCtrl">
+                                First Number&nbsp;&nbsp;&nbsp;&nbsp;  : <input type="text" ng-model="numberOne" accesskey="enter a number"><br><br>
+                                Second Number : <input type="text" ng-model="numberTwo" accesskey="enter a number"><br>
+                                <br/>
+                                <br/>
+                                <p> This tutorial is<span><h3>{{results(numberOne,numberTwo)}}</h3></span></p>
+                </div>
+</div>
+
+</body>  
+</html>
