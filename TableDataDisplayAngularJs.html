@@ -1,0 +1,40 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="utf 8">
+    <title>psaragadam</title>     
+</head>  
+<script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+
+<body ng-app="app">
+<script>  
+    angular.module("app", []).controller("tableDataCtrl", function($scope) {  
+        $scope.results=[
+                {firstName : "Pavan", lastName : "saragadam"},
+                {firstName : "Sateesh mohan", lastName : "pitta"},
+                {firstName : "Ravi", lastName : "saragadam"}
+        ];
+    } )
+</script> 
+
+<h1><a href="http://www.pa1soft.in">Hello angular..!</a></h1>
+<h3>Display of Results:</h3>
+
+<div>
+                <div ng-controller="tableDataCtrl">                       
+                                <table border="1">
+                                        <tr>
+                                                        <td>firstName</td>
+                                                        <td>lastName</td>
+                                        </tr>
+                                        <tr ng-repeat="person in results">
+                                                        <td>{{person.firstName}}</td>
+                                                        <td>{{person.lastName}}</td>
+                                        </tr>
+
+                                </table>
+                </div>
+</div>
+
+</body>  
+</html>
