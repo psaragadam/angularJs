@@ -1,0 +1,51 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="utf 8">
+    <title>psaragadam</title>     
+</head>  
+<script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+<body ng-app="addApp">
+<script>  
+    angular.module("addApp", []).controller("calNumbersCtrl", function($scope) { 
+        $scope.Calculation={
+                numberOne : 0,
+                numberTwo : 0,
+                type : "+"
+        };    
+        $scope.calresults=function(numberOne, numberTwo, type){
+                console.log('numberOne:' + parseInt($scope.Calculation.numberOne) + ' ,numberTwo:'+ parseInt($scope.Calculation.numberTwo) +' , type:'+ type);
+                        if(type === '/'){
+                                return parseInt($scope.Calculation.numberOne) / parseInt($scope.Calculation.numberTwo);
+                        } else if (type === '-') {
+                                return parseInt($scope.Calculation.numberOne) - parseInt($scope.Calculation.numberTwo);
+                        } else if (type === '*'){
+                                return parseInt($scope.Calculation.numberOne) * parseInt($scope.Calculation.numberTwo);
+                        } else{
+                                return parseInt($scope.Calculation.numberOne) + parseInt($scope.Calculation.numberTwo);
+                        }
+                        
+                };
+        
+    });
+</script> 
+<h1><a href="http://www.pa1soft.in">Hello angular..!</a></h1>
+<h3>Sum of Two number:</h3>
+<div>
+                <div ng-controller="calNumbersCtrl" >
+                                First Number&nbsp;&nbsp;&nbsp;&nbsp;  : <input type="text" ng-model="Calculation.numberOne" ><br><br>
+                                Second Number : <input type="text" ng-model="Calculation.numberTwo"><br>
+                                <br/>
+                                Type: 
+                                <input type="radio" ng-model="Calculation.type" value="+"/> Add &nbsp;&nbsp; 
+                                <input type="radio" ng-model="Calculation.type" value="-" /> Substraction &nbsp;&nbsp; 
+                                <input type="radio" ng-model="Calculation.type" value="*" /> Multiplication &nbsp;&nbsp;  
+                                <input type="radio" ng-model="Calculation.type" value="/" /> Division
+                                <br/>
+                                <p> Result is<span><h3>{{calresults(numberOne, numberTwo, type)}}</h3></span></p>
+                                
+                </div>
+</div>
+
+</body>  
+</html>
